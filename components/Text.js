@@ -27,6 +27,7 @@ const TextStyles = styled.span`
   font-size: ${({ size }) => sizes[size] || sizes.md};
   text-align: ${({ align }) => align};
   font-weight: ${({ weight }) => weight};
+  line-height: 1.5;
 `;
 
 const Text = ({ children, ...props }) => (
