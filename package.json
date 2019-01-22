@@ -7,13 +7,24 @@
     "build": "mdx-deck build deck.mdx",
     "pdf": "mdx-deck pdf deck.mdx",
     "image": "mdx-deck screenshot deck.mdx",
-    "help": "mdx-deck"
+    "help": "mdx-deck",
+    "test": "jest"
   },
   "keywords": [],
   "author": "Brent Jackson",
   "license": "MIT",
   "devDependencies": {
-    "mdx-deck": "^1.6.7"
+    "@babel/preset-env": "^7.3.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-jest": "^23.6.0",
+    "jest": "^23.6.0",
+    "jest-axe": "^3.1.0",
+    "mdx-deck": "^1.6.7",
+    "react-testing-library": "^5.4.4"
   },
-  "name": "components-everyone-can-use"
+  "name": "components-everyone-can-use",
+  "dependencies": {
+    "mdx-deck-code-surfer": "^0.5.3",
+    "react-syntax-highlighter": "^10.1.2"
+  }
 }

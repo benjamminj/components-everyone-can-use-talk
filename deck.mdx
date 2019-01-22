@@ -1,9 +1,12 @@
-import { Head } from 'mdx-deck';
+import { Head, Appear } from 'mdx-deck';
 import Text from './components/Text';
 import Handle from './components/Handle';
 import BigHandle from './components/BigHandle';
 import WithHandle from './layouts/WithHandle';
 import Image from './components/Image';
+import Heading from './components/Heading';
+import Highlight from './components/Highlight';
+import { colors } from './styles/variables';
 
 export { default as theme } from './theme';
 
@@ -41,7 +44,11 @@ export default WithHandle;
 
 <h3>
   <Text size="lg" font="secondary">
-    (a.k.a. <Text size="lg" font="mono" weight="bold">a11y</Text>)
+    (a.k.a.{' '}
+    <Highlight background={colors.blue[100]} textColor={colors.blue[900]}>
+      a11y
+    </Highlight>
+    )
   </Text>
 </h3>
 
@@ -51,39 +58,49 @@ We're already somewhat familiar with the concept of accessibility
 ```
 
 ---
-export default WithHandle
+
+export default WithHandle;
 
 <h2>
-  <Text size="xxl" font="secondary" weight="bold">
-    Accessibility is about making experiences
-    <br />
-    usable by anyone wheether or not they
-    <br />
-    are disabled
+  <Text size="xxl" font="secondary">
+    DISABILITY
   </Text>
 </h2>
 
-```notes
-TODO reword
-```
+<Appear>
+  <h3>
+    <Text size="lg" font="secondary">
+      ANY CONDITION THAT KEEPS USERS FROM EFFECTIVELY USING YOUR PRODUCT
+    </Text>
+  </h3>
+</Appear>
+
 ---
 
 export default WithHandle;
 
-<Image
-  alt="xkcd comic about braille"
-  src="./images/braille.png"
-  style={{ height: '60vh' }}
-  attribution="https://xkcd.com/315/"
-/>
+<Heading>PERMANENT</Heading>
+
+- blindness / low vision 🕶
+- muscle tremors 👋
+- amputated limb ♿️
+- deafness 👂
+- Cognitive disorders 🧠
 
 ```notes
-xkcd comic!
-talk about that we're already familiar with the concept of accessibility
-Braille, ramps at businesses etc.
+TODO -- make the list look nice and maybe appear in order?
 ```
 
 ---
+
+export default WithHandle;
+
+<Heading>TEMPORARY</Heading>
+
+- broken arm / finger 🏥
+- eyes dilated 👁
+- lost glasses 👓
+- ruptured eardrum 👂
 
 ```notes
 Further, we've all likely experienced a situation that made us temporarily disabled in one way or another
@@ -93,6 +110,14 @@ Eyes dilated is another example
 
 ---
 
+export default WithHandle;
+
+<Heading>SITUATIONAL</Heading>
+
+- glaring sunlight 🌞
+- noisy bar 🍻
+- mother holding baby 🍼
+
 ```notes
 If we haven't been temporarily disabled, we've definitely experienced a situation that inihibited our normal ability
   - think driving nito the sun, you may as well be blind
@@ -101,91 +126,142 @@ If we haven't been temporarily disabled, we've definitely experienced a situatio
 
 ---
 
+export default WithHandle;
+
+<Heading size="xxxl">Accessibility isn't an edge case!</Heading>
+
+---
+
+export default WithHandle;
+
+<Heading>At least 15% of the world population has a disability</Heading>
+
 ```notes
-Now take those physical disabilities and imagine how they would impact someone's ability to use your website!
+For America, those numbers are more difficult to find up-to-date information.
+
+The most recent numbers are the 2012 census, where it was found that roughly
+  - 18% of Americans have a disability,
+  - 12% of Americans identify their disability as severe.
 ```
 
 ---
+
+export default WithHandle;
+
+<Heading size="xxl" align="left" padding="0 15vw">
+  So why do we skip a11y so much? 😱
+</Heading>
 
 ```notes
 Reasons we often skip accessibility
 
-1. Time
-2. Awareness
-3. Don't know where to start
-4. Actual disregard for people with disabilities
-```
+Rarely is the reason because we actually dislike disabled people.
 
----
+If we went around the room and asked everyone if they hate blind people or people with
+autism my guess is most (hopefully all) of you would say, "No, they're people too and deserve to be treated as such!"
 
-```notes
-Actual disregard is rarely the reason we skip accessibility
-
-This is the equivalent of saying "Blind people won't ever use our app"
-
-I'd bet that if you go out in the street and ask random people, "Do you hate blind people?", you're gonna have a difficult time finding someone that answers "yes".
-
-Most of us accept that people with disabilities are still human! And that they shouldn't be discriminated against or excluded from our websites
-```
-
----
-
-```notes
 Time
-
-a11y isn't an edge case to be skipped!
-
-Use census data to prove that there's a lot of disabled people using the web if the examples before haven't brought the point home
-```
-
----
-
-```notes
 Awareness
-I'd encourage you to practice some empathy and try laying aside a little bit of your ability for a tiny bit.
-
-Try to use your website without a mouse or turn on a screen reader, turn down the brightness on your monitor, and see what happens.
-
-Chances are you'll walk out with an entirely new perspective on what it's like for someone with a disability to use your website...and some new tickets to add to your backlog.
+Don't know where to start
 ```
 
 ---
+
+export default WithHandle;
+
+<Heading size="xxxl">
+  AWARENESS & <br />
+  EMPATHY
+</Heading>
+
+---
+
+export default WithHandle;
+
+- Set up a screen reader
+- Use your app without a mouse
+- Turn off your volume
 
 ```notes
-Where to start
-
-The component is the first line of defense against inaccessible interfaces
-It's impossible to have an accessible interface if your components aren't accessible.
+TODO -- use an <Appear /> and make these look cool
 ```
 
 ---
+
+export default WithHandle;
+
+<Heading size="xxxl">
+  But I don't have time <br /> to learn accessibility!
+</Heading>
+
+---
+
+export default WithHandle;
+
+<Heading>
+  Let's use{' '}
+  <Highlight background="transparent" textColor={colors.blue[500]}>
+    components
+  </Highlight>{' '}
+  as the first line of defense
+</Heading>
+
+---
+
+export default WithHandle;
+
+<Heading size="xl">prop-types</Heading>
+
+```jsx
+import React from 'react';
+
+const Image = ({ src, alt }) => <img src={src} alt={alt} />;
+
+Image.propTypes = {
+  src: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
+};
+
+export default Image;
+```
 
 ```notes
-Where to start (cont.)
-
-So how do we help our components become more accessible?
-
----
-Learn how to test for accessibility. This means learning how to use a screen reader or trying to tab through your component while you're developing it. This will help you realize the edge cases that you need to be on the lookout for.
----
-Start with a single point of failure. Rather than trying to tackle _all_ accessibility problems all at once, take one type of accessibility and try to fix that.
-
----
-Bake it into your components' API. `prop-types` is extremely useful for enforcing certain required attributes on your components. For example, it's best practice that all `<img />` tags have an `alt` attribute or that buttons include a `type` attibute (because it will default to form submission). You can easily make sure that any inaccessible usage of the component throws development errors by making those props `required` on your `<Button />` and `<Image />` components.
----
-Set up automated lint checks. There's some great tools out there to make sure that your components are automatically checked for common accessibility errors. For example, eslint with `react/jsx-a11y` with yell at you about a lot of common accessibility errors. If you want something more comprehensive, you can also set up tools like `axe-core`, `jest-axe`, or even `lighthouse` to run against your app in unit, integration, and end-to-end testing scenarios. These are super helful since they'll catch tons of errors that you might not initially notice or think to test for.
----
-
-```
-
-## Edit this file
-
-To create your presentation
-
-```notes
-- Create speaker notes in fenced code blocks
+It's a lot easier to make 1 component accessible than it is to make an entire website accessible.
+This helps curb the feeling that a11y is a daunting task that's too big to even start.
 ```
 
 ---
 
-<https://github.com/jxnblk/mdx-deck>
+export default WithHandle;
+
+<Heading size="xl">Automate testing for a11y </Heading>
+
+- eslint (react/jsx-a11y)
+- lighthouse
+- axe-core & jest-axe
+
+---
+
+export default WithHandle;
+
+<Heading size="xl">jest-axe</Heading>
+
+```jsx
+import React from 'react';
+import { render } from 'react-testing-library';
+import Image from './Image';
+import { axe, toHaveNoViolations } from 'jest-axe';
+
+expect.extend(toHaveNoViolations);
+
+describe('<Image />', () => {
+  test('should be accessible', async () => {
+    const { container } = render(
+      <Image src="my-image-path.png" alt="something descriptive" />
+    );
+
+    const html = container.innerHTML;
+    expect(await axe(html)).toHaveNoViolations();
+  });
+});
+```
