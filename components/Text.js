@@ -2,7 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import { primaryFont, monoFont, secondaryFont, colors } from '../styles/variables';
+import {
+  primaryFont,
+  monoFont,
+  secondaryFont,
+  colors,
+} from '../styles/variables';
 
 const fonts = {
   primary: primaryFont,
@@ -29,7 +34,7 @@ const TextStyles = styled.span`
   font-weight: ${({ weight }) => weight};
   line-height: 1.5;
   color: ${({ color }) => color};
-  display: inline-block;
+  display: ${({ display }) => display};
   padding: ${({ padding }) => padding};
 `;
 
@@ -54,6 +59,7 @@ Text.propTypes = {
   weight: PropTypes.string,
   color: PropTypes.string,
   padding: PropTypes.string,
+  display: PropTypes.string,
 };
 
 Text.defaultProps = {
@@ -63,6 +69,7 @@ Text.defaultProps = {
   weight: 'normal',
   color: 'initial',
   padding: '0 5vw',
+  display: 'inline-block',
 };
 
 export default Text;

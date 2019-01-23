@@ -15,10 +15,10 @@ const HandleContainer = styled.div`
 
 const Handle = () => (
   <HandleContainer>
-    <Text font="mono" size="xs" align="right" weight="bold">
+    <Text font="mono" size="sm" align="right" weight="bold">
       @benjamminj
     </Text>
-    <Text font="mono" size="xs" align="right" weight="bold">
+    <Text font="mono" size="sm" align="right" weight="bold">
       #vincitdevtalks
     </Text>
   </HandleContainer>

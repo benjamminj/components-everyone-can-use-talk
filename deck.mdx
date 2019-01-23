@@ -4,6 +4,7 @@ import Handle from './components/Handle';
 import BigHandle from './components/BigHandle';
 import WithHandle from './layouts/WithHandle';
 import Image from './components/Image';
+import List from './components/List';
 import Heading from './components/Heading';
 import Highlight from './components/Highlight';
 import { colors } from './styles/variables';
@@ -63,14 +64,14 @@ export default WithHandle;
 
 <h2>
   <Text size="xxl" font="secondary">
-    DISABILITY
+    Disability
   </Text>
 </h2>
 
 <Appear>
   <h3>
-    <Text size="lg" font="secondary">
-      ANY CONDITION THAT KEEPS USERS FROM EFFECTIVELY USING YOUR PRODUCT
+    <Text size="xl" font="secondary">
+      Any condition that keeps <br /> users from effectively using your product
     </Text>
   </h3>
 </Appear>
@@ -79,13 +80,29 @@ export default WithHandle;
 
 export default WithHandle;
 
-<Heading>PERMANENT</Heading>
+<Heading>Permanent disability</Heading>
 
-- blindness / low vision 🕶
-- muscle tremors 👋
-- amputated limb ♿️
-- deafness 👂
-- Cognitive disorders 🧠
+---
+
+export default WithHandle;
+
+<List useAppear>
+  <Text font="secondary" size="xl">
+    🕶 Blindness / low vision
+  </Text>
+  <Text font="secondary" size="xl">
+    👋 Muscle tremors
+  </Text>
+  <Text font="secondary" size="xl">
+    ♿️ Amputated limb
+  </Text>
+  <Text font="secondary" size="xl">
+    👂 Deafness
+  </Text>
+  <Text font="secondary" size="xl">
+    🧠 Cognitive disability
+  </Text>
+</List>
 
 ```notes
 TODO -- make the list look nice and maybe appear in order?
@@ -95,12 +112,26 @@ TODO -- make the list look nice and maybe appear in order?
 
 export default WithHandle;
 
-<Heading>TEMPORARY</Heading>
+<Heading>Temporary disability</Heading>
 
-- broken arm / finger 🏥
-- eyes dilated 👁
-- lost glasses 👓
-- ruptured eardrum 👂
+---
+
+export default WithHandle;
+
+<List useAppear>
+  <Text font="secondary" size="xl">
+    🏥 Broken arm / finger
+  </Text>
+  <Text font="secondary" size="xl">
+    👁 Eyes dilated
+  </Text>
+  <Text font="secondary" size="xl">
+    👓 Lost glasses
+  </Text>
+  <Text font="secondary" size="xl">
+    👂 Ruptured eardrum
+  </Text>
+</List>
 
 ```notes
 Further, we've all likely experienced a situation that made us temporarily disabled in one way or another
@@ -112,11 +143,23 @@ Eyes dilated is another example
 
 export default WithHandle;
 
-<Heading>SITUATIONAL</Heading>
+<Heading>Situational disability</Heading>
 
-- glaring sunlight 🌞
-- noisy bar 🍻
-- mother holding baby 🍼
+---
+
+export default WithHandle;
+
+<List useAppear>
+  <Text font="secondary" size="xl">
+    🔅 Glaring sunlight
+  </Text>
+  <Text font="secondary" size="xl">
+    🍻 Noisy bar
+  </Text>
+  <Text font="secondary" size="xl">
+    👶 Mother holding baby
+  </Text>
+</List>
 
 ```notes
 If we haven't been temporarily disabled, we've definitely experienced a situation that inihibited our normal ability
@@ -134,7 +177,17 @@ export default WithHandle;
 
 export default WithHandle;
 
-<Heading>At least 15% of the world population has a disability</Heading>
+<Heading>
+  At least{' '}
+  <Highlight background={colors.blue[100]} textColor={colors.blue[900]}>
+    15%
+  </Highlight>{' '}
+  of the{' '}
+  <Highlight background={colors.blue[100]} textColor={colors.blue[900]}>
+    world population
+  </Highlight>{' '}
+  has a disability
+</Heading>
 
 ```notes
 For America, those numbers are more difficult to find up-to-date information.
@@ -149,7 +202,11 @@ The most recent numbers are the 2012 census, where it was found that roughly
 export default WithHandle;
 
 <Heading size="xxl" align="left" padding="0 15vw">
-  So why do we skip a11y so much? 😱
+  So{' '}
+  <Highlight background={colors.blue[100]} textColor={colors.blue[900]}>
+    why
+  </Highlight>{' '}
+  do we skip a11y so much? 😱
 </Heading>
 
 ```notes
@@ -169,41 +226,51 @@ Don't know where to start
 
 export default WithHandle;
 
+<Heading size="xxl">Reason #1:</Heading>
 <Heading size="xxxl">
-  AWARENESS & <br />
-  EMPATHY
+  Accessibility feels too daunting
 </Heading>
 
 ---
 
 export default WithHandle;
 
-- Set up a screen reader
-- Use your app without a mouse
-- Turn off your volume
-
-```notes
-TODO -- use an <Appear /> and make these look cool
-```
+<Heading size="xxl">Reason #2:</Heading>
+<Heading size="xxxl">
+  I don't have time!
+</Heading>
 
 ---
 
 export default WithHandle;
 
-<Heading size="xxxl">
-  But I don't have time <br /> to learn accessibility!
-</Heading>
+<Heading size="xxxl">Start small</Heading>
 
 ---
 
 export default WithHandle;
 
 <Heading>
-  Let's use{' '}
-  <Highlight background="transparent" textColor={colors.blue[500]}>
+  Make your{' '}
+  <Highlight
+    background={colors.blue[100]}
+    textColor={colors.blue[900]}
+    radius="10px"
+  >
     components
   </Highlight>{' '}
-  as the first line of defense
+  accessible, and the rest will follow
+</Heading>
+
+---
+
+export default WithHandle;
+
+<Heading size="xxl">
+  Encourage best practices <br /> in your{' '}
+  <Highlight background={colors.blue[100]} textColor={colors.blue[900]}>
+    component APIs
+  </Highlight>
 </Heading>
 
 ---
@@ -234,11 +301,51 @@ This helps curb the feeling that a11y is a daunting task that's too big to even 
 
 export default WithHandle;
 
-<Heading size="xl">Automate testing for a11y </Heading>
+<Heading size="xxl">
+  Learn how to manually <br /> test accessibility
+</Heading>
 
-- eslint (react/jsx-a11y)
-- lighthouse
-- axe-core & jest-axe
+---
+
+export default WithHandle;
+
+<List useAppear>
+  <Text font="secondary" size="xxl" align="left">
+    📣 Set up a screen reader
+  </Text>
+  <Text font="secondary" size="xxl" align="left">
+    🖱 Use your app without a mouse
+  </Text>
+  <Text font="secondary" size="xxl" align="left">
+    🔇 Turn off your volume
+  </Text>
+</List>
+
+```notes
+TODO -- use an <Appear /> and make these look cool
+```
+
+---
+
+export default WithHandle;
+
+<Heading size="xxl">Automate accessibility testing</Heading>
+
+---
+
+export default WithHandle;
+
+<List useAppear>
+  <Text font="secondary" size="xxl" align="left">
+    ✅ ESLint (react/jsx-a11y)
+  </Text>
+  <Text font="secondary" size="xxl" align="left">
+    🚢 Lighthouse
+  </Text>
+  <Text font="secondary" size="xxl" align="left">
+    🔨 Axe / jest-axe
+  </Text>
+</List>
 
 ---
 
