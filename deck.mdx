@@ -46,7 +46,7 @@ export default WithHandle;
 <h3>
   <Text size="lg" font="secondary">
     (a.k.a.{' '}
-    <Highlight background={colors.blue[100]} textColor={colors.blue[900]}>
+    <Highlight weight="bold" textColor={colors.blue[500]}>
       a11y
     </Highlight>
     )
@@ -178,15 +178,9 @@ export default WithHandle;
 export default WithHandle;
 
 <Heading>
-  At least{' '}
-  <Highlight background={colors.blue[100]} textColor={colors.blue[900]}>
-    15%
-  </Highlight>{' '}
-  of the{' '}
-  <Highlight background={colors.blue[100]} textColor={colors.blue[900]}>
-    world population
-  </Highlight>{' '}
-  has a disability
+  At least <Highlight textColor={colors.blue[500]}>15%</Highlight> of the{' '}
+  <Highlight textColor={colors.blue[500]}>world population</Highlight> has a
+  disability
 </Heading>
 
 ```notes
@@ -202,11 +196,8 @@ The most recent numbers are the 2012 census, where it was found that roughly
 export default WithHandle;
 
 <Heading size="xxl" align="left" padding="0 15vw">
-  So{' '}
-  <Highlight background={colors.blue[100]} textColor={colors.blue[900]}>
-    why
-  </Highlight>{' '}
-  do we skip a11y so much? 😱
+  Why do we skip a11y so
+  much? 😱
 </Heading>
 
 ```notes
@@ -251,15 +242,11 @@ export default WithHandle;
 export default WithHandle;
 
 <Heading>
-  Make your{' '}
-  <Highlight
-    background={colors.blue[100]}
-    textColor={colors.blue[900]}
-    radius="10px"
-  >
-    components
-  </Highlight>{' '}
-  accessible, and the rest will follow
+  Make{' '}
+  <Highlight textColor={colors.blue[500]} radius="10px">
+    accessible components
+  </Highlight>
+  , and the rest will follow
 </Heading>
 
 ---
@@ -268,9 +255,7 @@ export default WithHandle;
 
 <Heading size="xxl">
   Encourage best practices <br /> in your{' '}
-  <Highlight background={colors.blue[100]} textColor={colors.blue[900]}>
-    component APIs
-  </Highlight>
+  <Highlight textColor={colors.blue[500]}>component APIs</Highlight>
 </Heading>
 
 ---

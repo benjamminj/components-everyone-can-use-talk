@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Background = styled.span`
-  padding: 0.25rem 0.75rem;
   background-color: ${({ background }) => background};
   color: ${({ textColor }) => textColor};
   border-radius: ${({ radius }) => radius};
+  font-weight: ${({ weight }) => weight};
 `;
 
 const Highlight = ({ children, ...props }) => (
