@@ -3,6 +3,7 @@ import Text from './components/Text';
 import Handle from './components/Handle';
 import BigHandle from './components/BigHandle';
 import WithHandle from './layouts/WithHandle';
+import VisuallyHidden from './layouts/VisuallyHidden';
 import Image from './components/Image';
 import List from './components/List';
 import Heading from './components/Heading';
@@ -44,11 +45,11 @@ export default WithHandle;
 </h2>
 
 <Appear>
-<h3>
-  <Text size="lg" font="secondary">
+  <h3>
+    <Text size="lg" font="secondary">
       Making sure your product is fully usable by people with impairments
-  </Text>
-</h3>
+    </Text>
+  </h3>
 </Appear>
 
 ---
@@ -58,9 +59,15 @@ export default WithHandle;
 <Heading>Types of Impairment</Heading>
 
 <List useAppear>
-  <Text font="secondary" size="xl">Permanent ♿️</Text>
-  <Text font="secondary" size="xl">Temporary 📅</Text>
-  <Text font="secondary" size="xl">Situational 🍻</Text>
+  <Text font="secondary" size="xl">
+    Permanent ♿️
+  </Text>
+  <Text font="secondary" size="xl">
+    Temporary 📅
+  </Text>
+  <Text font="secondary" size="xl">
+    Situational 🍻
+  </Text>
 </List>
 
 ---
@@ -68,8 +75,7 @@ export default WithHandle;
 export default WithHandle;
 
 <Heading size="xxl" align="left" padding="0 15vw">
-  Why do we skip a11y so
-  much? 😱
+  Why do we skip a11y so much? 😱
 </Heading>
 
 ---
@@ -82,9 +88,16 @@ export default WithHandle;
 </Heading>
 
 ---
-export default WithHandle
+
+export default WithHandle;
 
 <Heading size="xxxl">Feel empathy for impaired users</Heading>
+
+---
+
+export default VisuallyHidden;
+
+<Heading size="xxxl">Turn your brightness all the way down</Heading>
 
 ---
 

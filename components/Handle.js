@@ -13,15 +13,18 @@ const HandleContainer = styled.div`
   padding: 1.5rem;
 `;
 
-const Handle = () => (
-  <HandleContainer>
-    <Text font="mono" size="sm" align="right" weight="bold">
-      @benjamminj
-    </Text>
-    <Text font="mono" size="sm" align="right" weight="bold">
-      #vincitdevtalks
-    </Text>
-  </HandleContainer>
-);
+const Handle = ({ invert }) => {
+  const color = invert ? '#fff' : 'initial';
+  return (
+    <HandleContainer>
+      <Text font="mono" size="sm" align="right" weight="bold" color={color}>
+        @benjamminj
+      </Text>
+      <Text font="mono" size="sm" align="right" weight="bold" color={color}>
+        #vincitdevtalks
+      </Text>
+    </HandleContainer>
+  );
+};
 
 export default Handle;

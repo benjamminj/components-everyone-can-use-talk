@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Handle from '../components/Handle'
+import Handle from '../components/Handle';
 
 const Container = styled.div`
   width: 100vw;
@@ -12,11 +12,15 @@ const Container = styled.div`
   position: relative;
 `;
 
-const WithHandle = ({ children }) => (
+const WithHandle = ({ children, invert }) => (
   <Container>
     {children}
-    <Handle />
+    <Handle invert={invert} />
   </Container>
 );
 
-export default WithHandle
+WithHandle.defaultProps = {
+  invert: false,
+};
+
+export default WithHandle;
