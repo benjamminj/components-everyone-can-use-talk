@@ -32,7 +32,7 @@ const TextStyles = styled.span`
   font-size: ${({ size }) => sizes[size] || sizes.md};
   text-align: ${({ align }) => align};
   font-weight: ${({ weight }) => weight};
-  line-height: 1.5;
+  line-height: ${({ wide }) => wide ? '2' : '1.5'};
   color: ${({ color }) => color};
   display: ${({ display }) => display};
   padding: ${({ padding }) => padding};

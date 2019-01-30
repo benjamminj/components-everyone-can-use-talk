@@ -23,8 +23,5 @@
     "react-testing-library": "^5.4.4"
   },
   "name": "components-everyone-can-use",
-  "dependencies": {
-    "mdx-deck-code-surfer": "^0.5.3",
-    "react-syntax-highlighter": "^10.1.2"
-  }
+  "dependencies": {}
 }

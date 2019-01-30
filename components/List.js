@@ -10,6 +10,8 @@ const ListContainer = styled.ul`
 
 const ListItem = styled.li`
   text-align: ${({ align }) => align};
+  line-height: 1.5;
+  margin: 2rem 0;
 `;
 
 const List = ({ align, children, useAppear }) => {
