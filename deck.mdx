@@ -1,11 +1,12 @@
-import { Head, Appear } from 'mdx-deck';
+import { Head, Appear, Image as FullScreenImage } from 'mdx-deck';
 import Text from './components/Text';
 import Handle from './components/Handle';
 import BigHandle from './components/BigHandle';
 import WithHandle from './layouts/WithHandle';
+import InvertHandle from './layouts/InvertHandle';
 import VisuallyHidden from './layouts/VisuallyHidden';
-import Image from './components/Image';
 import List from './components/List';
+import Image from './components/Image';
 import Heading from './components/Heading';
 import Highlight from './components/Highlight';
 import { colors } from './styles/variables';
@@ -46,8 +47,12 @@ export default WithHandle;
 
 <Appear>
   <h3>
-    <Text size="lg" font="secondary">
-      Making sure your product is fully usable by people with impairments
+    <Text size="xl" font="secondary">
+      Making sure your product is{' '}
+      <Highlight textColor={colors.blue[500]}>fully usable</Highlight>
+      <br /> by people with <Highlight textColor={colors.blue[500]}>
+        disabilities
+      </Highlight>
     </Text>
   </h3>
 </Appear>
@@ -56,17 +61,15 @@ export default WithHandle;
 
 export default WithHandle;
 
-<Heading>Types of Impairment</Heading>
-
 <List useAppear>
-  <Text font="secondary" size="xl">
-    Permanent ♿️
+  <Text font="secondary" size="xxl">
+    ♿️ Permanent disability
   </Text>
-  <Text font="secondary" size="xl">
-    Temporary 📅
+  <Text font="secondary" size="xxl">
+    📅 Temporary disability
   </Text>
-  <Text font="secondary" size="xl">
-    Situational 🍻
+  <Text font="secondary" size="xxl">
+    🍻 Situational disability
   </Text>
 </List>
 
@@ -74,8 +77,20 @@ export default WithHandle;
 
 export default WithHandle;
 
+<Heading size="xxl" align="left">
+  Roughly <Highlight textColor={colors.blue[500]}>1/5</Highlight> of the <Highlight textColor={colors.blue[500]}>US population</Highlight> <br /> has a <Highlight textColor={colors.blue[500]}>permanent</Highlight> disability
+</Heading>
+---
+
+export default WithHandle;
+
 <Heading size="xxl" align="left" padding="0 15vw">
-  Why do we skip a11y so much? 😱
+  Why do we{' '}
+  <Highlight textColor={colors.blue[500]}>
+    skip <br />
+    accessibility
+  </Highlight>{' '}
+  so much? 😱
 </Heading>
 
 ---
@@ -98,6 +113,15 @@ export default WithHandle;
 export default VisuallyHidden;
 
 <Heading size="xxxl">Turn your brightness all the way down</Heading>
+
+---
+
+export default InvertHandle;
+
+<FullScreenImage
+  src="./images/magicmouse.png"
+  alt="magic mouse charging upside down"
+/>
 
 ---
 

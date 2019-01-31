@@ -3,7 +3,7 @@ import Text from './Text';
 
 const BigHandle = () => (
   <div>
-    <Text size="sm" font="mono">
+    <Text size="md" font="mono" weight="bold">
       @benjamminj | #vincitdevtalks
     </Text>
   </div>
