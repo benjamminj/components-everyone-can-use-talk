@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { addComma } from '../../util'
 import './Repo.css';
 
-
 const Repo = ({ url, name, description, license, stars }) => {
   const [isOpen, setIsOpen] = useState(false);
 

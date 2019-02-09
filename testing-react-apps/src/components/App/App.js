@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Repo from '../Repo';
 import { fetchRepos } from '../../api/fetchRepos';
 import './App.css';
@@ -16,7 +17,10 @@ class App extends Component {
 
   onSubmitForm = async ev => {
     ev.preventDefault();
+
+    const { fetchRepos } = this.props;
     const { topic } = this.state;
+
     const repos = await fetchRepos(topic);
     this.setState({ repos });
   };
@@ -57,5 +61,13 @@ class App extends Component {
     );
   }
 }
+
+App.propTypes = {
+  fetchRepos: PropTypes.func,
+};
+
+App.defaultProps = {
+  fetchRepos,
+};
 
 export default App;
