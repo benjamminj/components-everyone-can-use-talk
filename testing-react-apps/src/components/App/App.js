@@ -31,7 +31,10 @@ class App extends Component {
     return (
       <div className="App">
         <form className="Form" onSubmit={this.onSubmitForm}>
-          <label className="Form__label" htmlFor="formTopic">
+          <label
+            className="Form__label"
+            htmlFor="formTopic"
+          >
             Topic
           </label>
           <input
@@ -51,7 +54,10 @@ class App extends Component {
         {repos.length > 0 && (
           <ul className="App-repoList">
             {repos.map(repo => (
-              <li className="App-repoListItem" key={repo.id}>
+              <li
+                className="App-repoListItem"
+                key={repo.id}
+              >
                 <Repo {...repo} />
               </li>
             ))}
