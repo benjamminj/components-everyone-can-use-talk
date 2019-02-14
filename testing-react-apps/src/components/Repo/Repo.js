@@ -1,24 +1,40 @@
 import React, { useState } from 'react';
-import { addComma } from '../../util'
+import PropTypes from 'prop-types';
+import { addComma } from '../../util';
 import './Repo.css';
 
-const Repo = ({ url, name, description, license, stars }) => {
+const Repo = ({
+  url,
+  name,
+  description,
+  license,
+  stars,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <article className="Repo">
       <h2 className="Repo__name">
-        <a href={url} target="_blank" rel="noopener noreferrer">
+        <a
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           {name}
         </a>
       </h2>
-      <h3 className="Repo__description">{description}</h3>
+      <h3 className="Repo__description">
+        {description}
+      </h3>
 
       <div className="Repo__moreContent">
         {isOpen && (
           <ul>
             <li>Stars: {addComma(stars)}</li>
-            <li>License: {license || 'Not available'}</li>
+            <li>
+              License:{' '}
+              {license || 'Not available'}
+            </li>
           </ul>
         )}
       </div>
@@ -32,6 +48,14 @@ const Repo = ({ url, name, description, license, stars }) => {
       </button>
     </article>
   );
+};
+
+Repo.propTypes = {
+  url: PropTypes.string,
+  name: PropTypes.string,
+  description: PropTypes.string,
+  license: PropTypes.string,
+  stars: PropTypes.number,
 };
 
 export default Repo;

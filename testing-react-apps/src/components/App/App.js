@@ -1,4 +1,6 @@
-import React, { Component } from 'react';
+import React, {
+  Component,
+} from 'react';
 import PropTypes from 'prop-types';
 import Repo from '../Repo';
 import { fetchRepos } from '../../api/fetchRepos';
@@ -21,7 +23,9 @@ class App extends Component {
     const { fetchRepos } = this.props;
     const { topic } = this.state;
 
-    const repos = await fetchRepos(topic);
+    const repos = await fetchRepos(
+      topic
+    );
     this.setState({ repos });
   };
 
@@ -30,7 +34,10 @@ class App extends Component {
 
     return (
       <div className="App">
-        <form className="Form" onSubmit={this.onSubmitForm}>
+        <form
+          className="Form"
+          onSubmit={this.onSubmitForm}
+        >
           <label
             className="Form__label"
             htmlFor="formTopic"
@@ -46,7 +53,10 @@ class App extends Component {
             onChange={this.updateTopic}
             required
           />
-          <button className="Form__button" type="submit">
+          <button
+            className="Form__button"
+            type="submit"
+          >
             Search!
           </button>
         </form>
